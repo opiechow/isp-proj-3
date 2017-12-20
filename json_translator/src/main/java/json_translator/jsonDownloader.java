@@ -26,7 +26,8 @@ public class jsonDownloader {
         JSONObject json = readJsonFromUrl("https://danepubliczne.imgw.pl/api/data/synop/station/gdansk");
         //zmieniæ na œcie¿kê wzglêdn¹
         String jsontoSend = jsonMapper.convertToJson(json, "C:\\Users\\Tyroke\\Desktop\\Semestr 9\\isp\\isp-proj-3\\json_translator\\src\\main\\java\\json_translator\\temp_hum.yml");
-        System.out.println(jsontoSend);
+        jsonSender.jsonSend("http://alfa.smartstorm.io/sensors", "t178705@mvrht.net", "jakiekolwiekhaslo!123", jsontoSend);
+        //System.out.println(jsontoSend);
 
     }
 }
