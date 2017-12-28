@@ -24,10 +24,9 @@ public class jsonDownloader {
 
     public static void main(String[] args) throws IOException, JSONException {
         JSONObject json = readJsonFromUrl("https://danepubliczne.imgw.pl/api/data/synop/station/gdansk");
-        //zmieniæ na œcie¿kê wzglêdn¹
+        //zmieniÃ¦ na Å“cieÂ¿kÃª wzglÃªdnÂ¹
         String jsontoSend = jsonMapper.convertToJson(json, "C:\\Users\\Tyroke\\Desktop\\Semestr 9\\isp\\isp-proj-3\\json_translator\\src\\main\\java\\json_translator\\temp_hum.yml");
         jsonSender.jsonSend("http://alfa.smartstorm.io/sensors", "t178705@mvrht.net", "jakiekolwiekhaslo!123", jsontoSend);
         //System.out.println(jsontoSend);
-
     }
 }
